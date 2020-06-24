@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "261380682946",
+    "firebase_url": "https://infinite-blade-256719.firebaseio.com",
+    "project_id": "infinite-blade-256719",
+    "storage_bucket": "infinite-blade-256719.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261380682946:android:f5ea0091e08d34cf58f75b",
+        "android_client_info": {
+          "package_name": "com.riseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261380682946-terin0kmljutg9vhvi2aplf6fpf2f1ug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.riseapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "261380682946-056f4lng0d05ek1qus7dqg29p8qp5n9k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_meXjTALkx8oWCcmCItLe4aSrPzB5774"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261380682946-056f4lng0d05ek1qus7dqg29p8qp5n9k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "261380682946-vtovf5h6v507ft92f8vks3umovqut43t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.Rise"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

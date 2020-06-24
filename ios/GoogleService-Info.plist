@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>261380682946-vtovf5h6v507ft92f8vks3umovqut43t.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.261380682946-vtovf5h6v507ft92f8vks3umovqut43t</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBVUOCBsTLhiixZGW6iK4QnJWjdLikdG5I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>261380682946</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.Rise</string>
+	<key>PROJECT_ID</key>
+	<string>infinite-blade-256719</string>
+	<key>STORAGE_BUCKET</key>
+	<string>infinite-blade-256719.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:261380682946:ios:d0b061b3914bd90f58f75b</string>
+	<key>DATABASE_URL</key>
+	<string>https://infinite-blade-256719.firebaseio.com</string>
+</dict>
+</plist>

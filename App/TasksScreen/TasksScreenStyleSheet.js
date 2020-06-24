@@ -1,0 +1,272 @@
+//
+//  TasksScreenStyleSheet.js
+//  RiseApp
+//
+//  Created by Nikhil Patel.
+//  Copyright © 2018 Rise. All rights reserved.
+//
+
+import {StyleSheet} from 'react-native';
+
+const styles = StyleSheet.create({
+  tasksscreenView: {
+    backgroundColor: '#DEE9FD', // "rgb(231, 238, 251)",
+    flex: 1,
+    alignItems: 'flex-end',
+  },
+  addbuttonButtonText: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'left',
+  },
+  addbuttonButton: {
+    backgroundColor: 'rgb(252, 102, 129)',
+    borderRadius: 30,
+    shadowColor: 'rgba(14, 144, 185, 0.4)',
+    shadowRadius: 5,
+    shadowOpacity: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+    width: 60,
+    height: 60,
+    marginRight: 30,
+    marginTop: 10,
+  },
+  addbuttonButtonImage: {
+    resizeMode: 'contain',
+  },
+  rectangleView: {
+    backgroundColor: '#fff',
+    borderRadius: 41,
+    shadowColor: 'rgba(0, 0, 0, 0.2)',
+    shadowRadius: 15,
+    shadowOpacity: 1,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: -50,
+    zIndex: 1,
+  },
+  daypickerView: {
+    shadowColor: 'rgba(0,0,0, 0.15)',
+    shadowRadius: 7,
+    shadowOpacity: 1,
+    backgroundColor: '#F4F2FF',
+    borderRadius: 15,
+    shadowOffset: {
+      height: 1,
+    },
+    alignSelf: 'center',
+    width: 333,
+    height: 52,
+    zIndex: 2,
+  },
+  daybuttonsuView: {
+    backgroundColor: 'transparent',
+    width: 39,
+    height: 36,
+  },
+  ovalButton: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+    height: 36,
+  },
+  ovalButtonText: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'left',
+  },
+  ovalButtonImage: {
+    resizeMode: 'contain',
+  },
+  daybuttonmView: {
+    backgroundColor: 'transparent',
+    width: 39,
+    height: 36,
+    marginLeft: 5,
+  },
+  ovalTwoButtonText: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'left',
+  },
+  ovalTwoButton: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+    height: 36,
+  },
+  ovalTwoButtonImage: {
+    resizeMode: 'contain',
+  },
+  daybuttontView: {
+    backgroundColor: 'transparent',
+    width: 39,
+    height: 36,
+    marginLeft: 5,
+  },
+  ovalThreeButtonImage: {
+    resizeMode: 'contain',
+  },
+  ovalThreeButton: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+    height: 36,
+  },
+  ovalThreeButtonText: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'left',
+  },
+  daybuttonthView: {
+    backgroundColor: 'transparent',
+    width: 39,
+    height: 36,
+    marginRight: 5,
+  },
+  ovalFiveButtonImage: {
+    resizeMode: 'contain',
+  },
+  ovalFiveButton: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+    height: 36,
+  },
+  ovalFiveButtonText: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'left',
+  },
+  daybuttonfView: {
+    backgroundColor: 'transparent',
+    width: 39,
+    height: 36,
+    marginRight: 5,
+  },
+  ovalSixButtonImage: {
+    resizeMode: 'contain',
+  },
+  ovalSixButton: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+    height: 36,
+  },
+  ovalSixButtonText: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'left',
+  },
+  daybuttonsView: {
+    backgroundColor: 'transparent',
+    width: 39,
+    height: 36,
+  },
+  ovalSevenButtonImage: {
+    resizeMode: 'contain',
+  },
+  ovalSevenButton: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+    height: 36,
+  },
+  ovalSevenButtonText: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'left',
+  },
+  daybuttonwView: {
+    backgroundColor: 'transparent',
+    width: 39,
+    height: 36,
+  },
+  ovalFourButtonImage: {
+    resizeMode: 'contain',
+  },
+  ovalFourButton: {
+    backgroundColor: 'transparent',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 0,
+    height: 36,
+  },
+  ovalFourButtonText: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'left',
+  },
+  tableviewFlatList: {
+    backgroundColor: 'transparent',
+    width: '100%',
+    height: '100%',
+    paddingTop: 5,
+  },
+  tableviewFlatListViewWrapper: {
+    flex: 1,
+    paddingTop: 5,
+    paddingBottom: 7,
+  },
+  taskbarView: {
+    backgroundColor: 'white',
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowRadius: 16,
+    shadowOpacity: 1,
+    height: 85,
+    bottom: 0,
+  },
+  noTasksFound: {
+    color: 'black',
+    fontFamily: '.AppleSystemUIFont',
+    fontSize: 12,
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    textAlign: 'center',
+    paddingTop: 20,
+  },
+});
+
+export default styles;
