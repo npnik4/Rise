@@ -183,7 +183,7 @@ class AddTask extends React.Component {
           <View style={styles.backgroundcardView}>
             <Image
               source={require('./../../assets/images/BackgroundCard.png')}
-              style={{resizeMode: 'contain'}}
+              style={{resizeMode: 'stretch', width: '100%', zIndex: -1}}
             />
           </View>
           <View
@@ -195,6 +195,7 @@ class AddTask extends React.Component {
               top: 0,
               bottom: 0,
               alignItems: 'center',
+              // borderRadius: 40,
             }}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
               <View style={styles.rectangleView} />
@@ -203,15 +204,13 @@ class AddTask extends React.Component {
           <View
             pointerEvents="box-none"
             style={{
-              position: 'absolute',
-              left: 43,
-              right: 42,
-              top: 70,
-              bottom: 110,
+              flex: 1,
+              flexDirection: 'column',
               alignItems: 'center',
+              marginTop: 60,
             }}>
-            <Text style={styles.taskNameText}>Task Name</Text>
             <View style={styles.tasktextboxView}>
+              <Text style={styles.taskNameText}>Task Name</Text>
               <TextInput
                 returnKeyType="done"
                 multiline={true}
@@ -225,90 +224,101 @@ class AddTask extends React.Component {
             </View>
             <View
               style={{
-                position: 'absolute',
-                top: 130,
-                bottom: 0,
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                backgroundColor: 'transparent',
+                // marginBottom: 30,
+                alignItems: 'center',
+                // borderWidth: 2,
+                marginVertical: 5,
+                // borderColor: 'blue',
               }}>
               <Text style={styles.approximateTaskLenText}>
                 Approximate Task Length
               </Text>
-            </View>
-            <View style={styles.counterView}>
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  alignSelf: 'center',
-                  top: 0,
-                  bottom: 0,
-                  justifyContent: 'center',
-                }}>
-                <View style={styles.textFieldView} />
-              </View>
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  right: 0,
-                  top: 0,
-                  bottom: 0,
-                  justifyContent: 'center',
-                }}>
+
+              <View style={styles.counterView}>
                 <View
                   pointerEvents="box-none"
                   style={{
-                    height: 40,
-                    marginLeft: 16,
-                    marginRight: 13,
-                    flexDirection: 'row',
-                    alignItems: 'center',
+                    position: 'absolute',
+                    alignSelf: 'center',
+                    top: 0,
+                    bottom: 0,
+                    justifyContent: 'center',
                   }}>
-                  <TouchableOpacity
-                    onPress={() => this.onMinusButton()}
-                    style={styles.buttonTwoButton}>
-                    <Text style={styles.buttonTwoButtonText}>-</Text>
-                  </TouchableOpacity>
-                  <View
-                    style={{
-                      flex: 1,
-                    }}
-                  />
-                  <TouchableOpacity
-                    onPress={() => this.onPlusButton()}
-                    style={styles.buttonButton}>
-                    <Text style={styles.buttonButtonText}>+</Text>
-                  </TouchableOpacity>
+                  <View style={styles.textFieldView} />
                 </View>
-              </View>
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  alignSelf: 'center',
-                  width: 33,
-                  top: 8,
-                  height: 37,
-                  alignItems: 'center',
-                }}>
-                <TextInput
-                  keyboardType="number-pad"
-                  autoCorrect={false}
-                  onChangeText={(mins) =>
-                    this.setState({mins: parseInt(mins, 10)})
-                  }
-                  style={styles.textInputTextInput}
-                  value={this.state.mins.toString()}
-                />
-                <Text style={styles.minsText}>mins</Text>
+                <View
+                  pointerEvents="box-none"
+                  style={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    justifyContent: 'center',
+                  }}>
+                  <View
+                    pointerEvents="box-none"
+                    style={{
+                      height: 40,
+                      marginLeft: 16,
+                      marginRight: 13,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                    }}>
+                    <TouchableOpacity
+                      onPress={() => this.onMinusButton()}
+                      style={styles.buttonTwoButton}>
+                      <Text style={styles.buttonTwoButtonText}>-</Text>
+                    </TouchableOpacity>
+                    <View
+                      style={{
+                        flex: 1,
+                      }}
+                    />
+                    <TouchableOpacity
+                      onPress={() => this.onPlusButton()}
+                      style={styles.buttonButton}>
+                      <Text style={styles.buttonButtonText}>+</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <View
+                  pointerEvents="box-none"
+                  style={{
+                    position: 'absolute',
+                    alignSelf: 'center',
+                    width: 35,
+                    top: 8,
+                    height: 37,
+                    alignItems: 'center',
+                    // backgroundColor: 'white',
+                  }}>
+                  <TextInput
+                    keyboardType="number-pad"
+                    autoCorrect={false}
+                    onChangeText={(mins) =>
+                      this.setState({mins: parseInt(mins, 10)})
+                    }
+                    style={styles.textInputTextInput}
+                    value={this.state.mins.toString()}
+                  />
+                  <Text style={styles.minsText}>mins</Text>
+                </View>
               </View>
             </View>
             <View
               style={{
                 flex: 1,
+                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'flex-start',
                 marginTop: 15,
+                // borderColor: 'pink',
+                // borderWidth: 2,
               }}>
               <Text style={styles.approximateTaskLenText}>Repeat task on</Text>
               <DayPicker
@@ -316,6 +326,19 @@ class AddTask extends React.Component {
                 onDayPressed={(day) => this.daySelected(day)}
               />
             </View>
+          </View>
+          {/* <View style={{flex: 1}} /> */}
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              backgroundColor: 'transparent',
+              marginBottom: 30,
+              alignItems: 'center',
+              // borderWidth: 2,
+              marginVertical: 5,
+            }}>
             <Animated.View
               style={[
                 {
@@ -345,22 +368,6 @@ class AddTask extends React.Component {
                 </Text>
               </TouchableOpacity>
             </Animated.View>
-          </View>
-          <View
-            pointerEvents="box-none"
-            style={{
-              position: 'absolute',
-              alignSelf: 'center',
-              width: 234,
-              top: 300,
-              bottom: 26,
-              alignItems: 'center',
-            }}>
-            <View
-              style={{
-                flex: 1,
-              }}
-            />
             <Animated.View
               style={[
                 {

@@ -172,6 +172,7 @@ class HomeScreen extends React.Component {
             removeClippedSubviews={false}
             ListEmptyComponent={this.renderItemList}
             keyExtractor={(item) => item.publishedAt}
+            showsHorizontalScrollIndicator={false}
             horizontal={true}
           />
         </View>
@@ -209,6 +210,7 @@ class HomeScreen extends React.Component {
           <View
             style={{
               flex: 1,
+              elevation: 0,
             }}>
             <Image
               source={require('./../../assets/images/TopView.png')}
@@ -218,26 +220,36 @@ class HomeScreen extends React.Component {
           </View>
           <View
             style={{
-              flex: 0.7,
-            }}>
-            {this.newsView()}
-          </View>
-          <View
-            style={{
-              flex: 0.3,
+              flex: 1,
               // borderWidth: 2,
-              marginBottom: 10,
-              justifyContent: 'flex-start',
-              alignItems: 'center',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
             }}>
-            <BannerAd
-              unitId={TestIds.BANNER}
-              size={
-                PAGE_HEIGHT >= 800
-                  ? BannerAdSize.LARGE_BANNER
-                  : BannerAdSize.SMART_BANNER
-              }
-            />
+            <View
+              style={{
+                flex: 1,
+              }}>
+              {this.newsView()}
+            </View>
+            <View
+              style={{
+                // flex: 0.2,
+                // borderWidth: 2,
+                marginBottom: 10,
+                justifyContent: 'flex-start',
+                // alignItems: 'center',
+                alignSelf: 'center',
+              }}>
+              <BannerAd
+                unitId={TestIds.BANNER}
+                size={
+                  PAGE_HEIGHT >= 800
+                    ? BannerAdSize.LARGE_BANNER
+                    : BannerAdSize.SMART_BANNER
+                }
+              />
+            </View>
           </View>
         </View>
       </View>

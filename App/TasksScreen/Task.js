@@ -67,6 +67,7 @@ class Task extends React.Component {
               height: 44,
               flexDirection: 'row',
               alignItems: 'flex-start',
+              elevation: 2,
             }}>
             <Image
               style={styles.reorderButton}

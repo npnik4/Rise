@@ -9,7 +9,14 @@
 
 import React from 'react';
 import styles from './NewsStyleSheet';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+  Linking,
+  Alert,
+} from 'react-native';
 import {NavigationContext} from '@react-navigation/native';
 
 class News extends React.Component {
@@ -21,28 +28,44 @@ class News extends React.Component {
 
   componentDidMount() {}
 
-  onTaskPress = (url) => {
+  onTaskPress = async (url) => {
     url = url.replace('http', 'https');
-    const navigation = this.context;
-    navigation.navigate('News', {url: url});
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+      // Opening the link with some app, if the URL scheme is "http" the web link should be opened
+      // by some browser in the mobile
+      await Linking.openURL(url);
+    } else {
+      Alert.alert('Error opening this news article, please try again later.');
+    }
+    // const navigation = this.context;
+    // navigation.navigate('News', {url: url});
   };
 
-  showMoreNews = () => {
+  showMoreNews = async () => {
     let url = 'https://news.google.com/topstories';
-    const navigation = this.context;
-    navigation.navigate('News', {url: url});
+    const supported = await Linking.canOpenURL(url);
+    if (supported) {
+      // Opening the link with some app, if the URL scheme is "http" the web link should be opened
+      // by some browser in the mobile
+      await Linking.openURL(url);
+    } else {
+      Alert.alert('Error opening more articles, please try again later.');
+    }
+    // const navigation = this.context;
+    // navigation.navigate('News', {url: url});
   };
   // this.props.data.title.trim()
   // this.props.image
   lastCard = () => {
     return (
-      <TouchableOpacity onPress={() => this.showMoreNews()}>
+      <TouchableWithoutFeedback onPress={() => this.showMoreNews()}>
         <View style={styles.groupExtra}>
           <View>
             <Text style={styles.extraText}>•••</Text>
           </View>
         </View>
-      </TouchableOpacity>
+      </TouchableWithoutFeedback>
     );
   };
 
@@ -52,7 +75,7 @@ class News extends React.Component {
         {this.props.data.last ? (
           this.lastCard()
         ) : (
-          <TouchableOpacity
+          <TouchableWithoutFeedback
             onPress={() => this.onTaskPress(this.props.data.url)}>
             <View style={styles.group}>
               <View style={styles.image}>
@@ -65,7 +88,7 @@ class News extends React.Component {
                 </Text>
               </View>
             </View>
-          </TouchableOpacity>
+          </TouchableWithoutFeedback>
         )}
       </>
     );

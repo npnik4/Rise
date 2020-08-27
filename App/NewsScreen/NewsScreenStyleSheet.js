@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
 		borderRadius: 41,
 		shadowColor: "rgba(0, 0, 0, 0.1)",
 		shadowRadius: 2,
+		elevation: 4,
 		shadowOpacity: 1,
 		position: "absolute",
 		left: 0,

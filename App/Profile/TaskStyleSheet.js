@@ -11,7 +11,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   group: {
     backgroundColor: 'transparent',
-    width: '100%',
+    // width: '100%',
     height: 105,
     marginBottom: 5,
     shadowColor: 'rgba(0, 0, 0, 0.25)',
@@ -35,7 +35,9 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     position: 'absolute',
-    resizeMode: 'contain',
+    resizeMode: 'stretch',
+    // alignSelf: 'stretch',
+    width: '100%',
     zIndex: -1,
     // tintColor: 'rgba(255, 255, 255, 0.99)',
   },

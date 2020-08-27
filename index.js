@@ -8,8 +8,9 @@ import App from './App';
 // import Navigation from './App/Config/Navigation';
 import {name as appName} from './app.json';
 import {YellowBox} from 'react-native';
+import 'react-native-get-random-values';
 YellowBox.ignoreWarnings(['`-[RCTRootView cancelTouches]`']);
 // console.ignoredYellowBox = ['Warning: `-[RCTRootView cancelTouches]`'];
 AppRegistry.registerComponent(appName, () => App);
 
-// export default () => <Navigation />;
+// export default () => <Navigation />

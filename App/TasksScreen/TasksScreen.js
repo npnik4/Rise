@@ -90,6 +90,7 @@ class TasksScreen extends React.Component {
               top: 20,
               bottom: 1,
               zIndex: 2,
+              elevation: 4,
             }}>
             <View style={styles.daypickerView}>
               <View

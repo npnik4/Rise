@@ -165,24 +165,17 @@ class SignUpScreen extends React.Component {
               source={require('./../../assets/images/RiseLogo4.png')}
               style={styles.riselogoImage}
             />
-            {/* <Text style={{...styles.welcomeToRiseText, position: "absolute", alignSelf: "center", top: '20%'}}>Rise</Text> */}
           </Animated.View>
-          <Text style={styles.welcomeToRiseText} />
-          <View style={styles.emailView}>
-            <View style={styles.formFieldTwoView} />
-            <View
-              pointerEvents="box-none"
-              style={{
-                position: 'absolute',
-                left: 16,
-                right: 16,
-                top: 0,
-                height: 49,
-                alignItems: 'flex-start',
-              }}>
-              <Text style={styles.emailAddressText}>
-                {this.state.emailError}
-              </Text>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              width: '100%',
+              marginTop: 10,
+            }}>
+            <View style={styles.emailView}>
+              <Text style={styles.emailAddressText}>Email Address</Text>
               <TextInput
                 clearButtonMode="always"
                 autoCorrect={false}
@@ -196,79 +189,46 @@ class SignUpScreen extends React.Component {
                 style={styles.emailAddressTextInput}
               />
             </View>
-          </View>
-          <View style={styles.confirmpasswordView}>
-            <View
-              pointerEvents="box-none"
-              style={{
-                height: 59,
-                marginRight: 1,
-              }}>
-              <View style={styles.formFieldView} />
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  left: 16,
-                  right: 16,
-                  top: 7,
-                  height: 46,
-                  alignItems: 'flex-start',
-                  justifyContent: 'center',
-                }}>
-                <TextInput
-                  autoCorrect={false}
-                  placeholder="Password"
-                  returnKeyType="done"
-                  autoCapitalize={'none'}
-                  textContentType="password"
-                  onChangeText={(text) => this.setState({password: text})}
-                  secureTextEntry={true}
-                  style={styles.passwordTextInput}
-                />
-              </View>
-            </View>
-            <View
-              pointerEvents="box-none"
-              style={{
-                flex: 1,
-              }}>
-              <View style={styles.formFieldCopyView} />
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  left: 16,
-                  right: 16,
-                  top: 25,
-                  // bottom: 11,
-                  alignItems: 'flex-start',
-                  // justifyContent: 'space-between'
-                }}>
-                {/* <View
-								style={{
-									flex: 1,
-								}}/> */}
-                <TextInput
-                  autoCorrect={false}
-                  placeholder="Confirm Password"
-                  secureTextEntry={true}
-                  returnKeyType="done"
-                  textContentType="password"
-                  autoCapitalize={'none'}
-                  onChangeText={(text) =>
-                    this.setState({confirmPassword: text})
-                  }
-                  style={styles.pTextInput}
-                />
-              </View>
+            <View style={styles.confirmpasswordView}>
+              <Text style={styles.emailAddressText}>Password</Text>
+              <TextInput
+                autoCorrect={false}
+                placeholder="Password"
+                returnKeyType="done"
+                autoCapitalize={'none'}
+                textContentType="password"
+                onChangeText={(text) => this.setState({password: text})}
+                secureTextEntry={true}
+                style={styles.passwordTextInput}
+              />
+              <Text style={{...styles.emailAddressText, marginTop: 10}}>
+                Confirm Password
+              </Text>
+              <TextInput
+                autoCorrect={false}
+                placeholder="Confirm Password"
+                secureTextEntry={true}
+                returnKeyType="done"
+                textContentType="password"
+                autoCapitalize={'none'}
+                onChangeText={(text) => this.setState({confirmPassword: text})}
+                style={styles.pTextInput}
+              />
             </View>
           </View>
           <View
             style={{
               flex: 1,
             }}>
-            <Text style={styles.confirmPasswordText}> {this.state.error} </Text>
+            <Text
+              style={{...styles.emailAddressText, fontSize: 16, color: 'red'}}>
+              {this.state.emailError}
+            </Text>
+            <Text
+              style={{...styles.emailAddressText, fontSize: 16, color: 'red'}}>
+              {' '}
+              {this.state.error}{' '}
+            </Text>
           </View>
 
           <Animated.View

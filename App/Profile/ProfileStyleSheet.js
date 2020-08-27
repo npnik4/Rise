@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 5,
     paddingTop: 5,
+    elevation: 4,
   },
   tableviewFlatList: {
     backgroundColor: 'transparent',
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
     height: '100%',
     paddingTop: 5,
     paddingBottom: 5,
+    // borderWidth: 2,
   },
   noTasksFound: {
     color: 'black',
@@ -42,13 +44,14 @@ const styles = StyleSheet.create({
     borderRadius: 41,
     shadowColor: 'rgba(0, 0, 0, 0.15)',
     shadowRadius: 7,
+    elevation: 4,
     shadowOpacity: 1,
     position: 'absolute',
     left: 0,
     right: 0,
     top: 0,
     bottom: -50,
-    elevation: 2,
+    // elevation: 2,
   },
   option4Button: {
     backgroundColor: '#DEE9FD', //"rgb(231, 238, 251)",
@@ -60,6 +63,7 @@ const styles = StyleSheet.create({
       height: 2,
     },
     shadowRadius: 10,
+    elevation: 4,
     shadowOpacity: 1,
     flexDirection: 'row',
     alignItems: 'center',
@@ -87,12 +91,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     height: 60,
     marginBottom: 30,
+    elevation: 4,
   },
   addbuttonButton: {
     // backgroundColor: 'rgb(252, 102, 129)', //'#DEE9FD', //"#87C7FF",
     // borderRadius: 30,
     shadowColor: 'rgba(0, 0, 0, 0.15)',
     shadowRadius: 7,
+    elevation: 4,
     shadowOpacity: 1,
     shadowOffset: {
       height: 1,
@@ -104,7 +110,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     marginRight: 30,
-    marginTop: 10,
+    marginTop: 60,
   },
   addbuttonButtonImage: {
     resizeMode: 'contain',

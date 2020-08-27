@@ -89,6 +89,10 @@ class LoginScreen extends React.Component {
       this.setState({error: 'Please enter email'});
       return;
     }
+    if (password === '') {
+      this.setState({error: 'Please enter password'});
+      return;
+    }
     this.setState({spinner: true});
     auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -138,6 +142,7 @@ class LoginScreen extends React.Component {
     // Configure animation and trigger
     Animated.parallel([
       Animated.parallel([
+        // eslint-disable-next-line no-undef
         Animated.timing(riselogoImageScale, {
           duration: 1000,
           easing: Easing.bezier(0.22, 0.61, 0.36, 1),
@@ -195,121 +200,105 @@ class LoginScreen extends React.Component {
         <SafeAreaView style={styles.loginscreenView}>
           <StatusBar barStyle="dark-content" />
           {this.state.spinner ? this.spinner() : null}
-          <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={{flex: 1, width: '100%', alignItems: 'center'}}>
-            <View
-              pointerEvents="box-none"
-              style={{
-                width: 296,
-                height: 242,
-                marginTop: 0,
-              }}>
-              <Animated.View
-                style={[
-                  {
-                    opacity: this.state.riselogoImageOpacity.interpolate({
-                      inputRange: [-1, 0, 0.6, 1],
-                      outputRange: [1, 0, 1, 1],
-                    }),
-                    transform: [
-                      {
-                        scale: this.state.riselogoImageScale.interpolate({
-                          inputRange: [-1, 0, 0.2, 0.4, 0.6, 0.8, 1],
-                          outputRange: [1, 0.3, 1.1, 0.9, 1.03, 0.97, 1],
-                        }),
-                      },
-                    ],
-                  },
-                  styles.riselogoImageAnimated,
-                ]}>
-                <Image
-                  source={require('./../../assets/images/RiseLogo4.png')}
-                  style={styles.riselogoImage}
-                />
-              </Animated.View>
-              <Text style={styles.welcomeToRiseText}>Welcome to Rise</Text>
-            </View>
-            <View style={styles.emailView}>
-              <View style={styles.formFieldTwoView} />
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  left: 20,
-                  right: 19,
-                  top: 0,
-                  height: 52,
-                  alignItems: 'flex-start',
-                }}>
-                <Text style={styles.emailAddressText}>{this.state.error}</Text>
-                <TextInput
-                  returnKeyType="next"
-                  clearButtonMode="always"
-                  autoCapitalize={'none'}
-                  autoCorrect={false}
-                  keyboardType="email-address"
-                  value={this.state.email}
-                  placeholder="Email Address"
-                  // textContentType="emailAddress"
-                  onChangeText={(text) =>
-                    this.setState({email: text, error: ''})
-                  }
-                  style={styles.emailAddressTextInput}
-                />
-              </View>
-            </View>
-            <View style={styles.passwordView}>
-              <View style={styles.formFieldView} />
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  left: 20,
-                  right: 8,
-                  top: 0,
-                  height: 55,
-                }}>
-                <View
-                  pointerEvents="box-none"
-                  style={{
-                    height: 19,
-                    flexDirection: 'row',
-                    alignItems: 'flex-start',
-                  }}>
-                  <View
-                    style={{
-                      flex: 1,
-                    }}
-                  />
-                  <TouchableOpacity
-                    onPress={this.onForgotPasswordPressed}
-                    style={styles.forgotPasswordButton}>
-                    <Text style={styles.forgotPasswordButtonText}>
-                      Forgot Password?
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-                <TextInput
-                  returnKeyType="done"
-                  autoCorrect={false}
-                  placeholder="Password"
-                  secureTextEntry={true}
-                  value={this.state.password}
-                  onChangeText={(text) =>
-                    this.setState({password: text, error: ''})
-                  }
-                  textContentType="password"
-                  style={styles.passwordTextInput}
-                />
-              </View>
-            </View>
-          </KeyboardAvoidingView>
+          <View
+            pointerEvents="box-none"
+            style={{
+              width: 296,
+              height: 242,
+              marginTop: 0,
+            }}>
+            <Animated.View
+              style={[
+                {
+                  opacity: this.state.riselogoImageOpacity.interpolate({
+                    inputRange: [-1, 0, 0.6, 1],
+                    outputRange: [1, 0, 1, 1],
+                  }),
+                  transform: [
+                    {
+                      scale: this.state.riselogoImageScale.interpolate({
+                        inputRange: [-1, 0, 0.2, 0.4, 0.6, 0.8, 1],
+                        outputRange: [1, 0.3, 1.1, 0.9, 1.03, 0.97, 1],
+                      }),
+                    },
+                  ],
+                },
+                styles.riselogoImageAnimated,
+              ]}>
+              <Image
+                source={require('./../../assets/images/RiseLogo4.png')}
+                style={styles.riselogoImage}
+              />
+            </Animated.View>
+            <Text style={styles.welcomeToRiseText}>Welcome to Rise</Text>
+          </View>
           <View
             style={{
               flex: 1,
-            }}
-          />
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              width: '100%',
+              marginTop: 10,
+            }}>
+            <View style={styles.emailView}>
+              <Text style={styles.emailAddressText}>Email Address</Text>
+              <TextInput
+                returnKeyType="next"
+                clearButtonMode="always"
+                autoCapitalize={'none'}
+                autoCorrect={false}
+                keyboardType="email-address"
+                value={this.state.email}
+                placeholder="Email Address"
+                // textContentType="emailAddress"
+                onChangeText={(text) => this.setState({email: text, error: ''})}
+                style={styles.emailAddressTextInput}
+              />
+            </View>
+            <View style={styles.passwordView}>
+              <View
+                pointerEvents="box-none"
+                style={{
+                  height: 19,
+                  flexDirection: 'row',
+                  alignItems: 'flex-start',
+                  justifyContent: 'space-between',
+                  flex: 0.5,
+                }}>
+                <Text style={styles.emailAddressText}>Password</Text>
+                <TouchableOpacity
+                  onPress={this.onForgotPasswordPressed}
+                  style={styles.forgotPasswordButton}>
+                  <Text style={styles.forgotPasswordButtonText}>
+                    Forgot Password?
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <TextInput
+                returnKeyType="done"
+                autoCorrect={false}
+                autoCapitalize={'none'}
+                placeholder="Password"
+                secureTextEntry={true}
+                value={this.state.password}
+                onChangeText={(text) =>
+                  this.setState({password: text, error: ''})
+                }
+                textContentType="password"
+                style={styles.passwordTextInput}
+              />
+            </View>
+          </View>
+          <View
+            style={{
+              flex: 0.5,
+            }}>
+            <Text
+              style={{...styles.emailAddressText, fontSize: 16, color: 'red'}}>
+              {' '}
+              {this.state.error}{' '}
+            </Text>
+          </View>
           <Animated.View
             style={[
               {

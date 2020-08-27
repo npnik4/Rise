@@ -6,8 +6,8 @@
 //  Copyright © 2018 Rise. All rights reserved.
 //
 
-import {StyleSheet} from 'react-native';
-
+import {StyleSheet, Dimensions} from 'react-native';
+const PAGE_HEIGHT = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   homescreenView: {
     backgroundColor: 'white',
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     shadowColor: 'rgba(0, 0, 0, 0.15)',
     shadowRadius: 13,
+    elevation: 4,
     shadowOpacity: 1,
     marginLeft: 66,
     marginRight: 66,
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
     borderRadius: 41,
     shadowColor: 'rgba(0, 0, 0, 0.5)',
     shadowRadius: 10,
+    elevation: 2,
     shadowOpacity: 1,
     height: 950,
     marginTop: 45,
@@ -49,7 +51,8 @@ const styles = StyleSheet.create({
     height: 175,
     marginLeft: 15,
     marginRight: 15,
-    top: '45%',
+    marginTop: PAGE_HEIGHT >= 800 ? '45%' : '25%',
+    elevation: 0,
   },
   card1View: {
     backgroundColor: '#fff',
@@ -64,6 +67,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 0,
     right: 0,
+    elevation: 4,
     top: 0,
     height: 175,
     justifyContent: 'center',
@@ -75,6 +79,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
+    elevation: 4,
     // borderBottomWidth: 1,
     // borderColor: "rgb(252, 102, 129)"
   },
@@ -164,6 +169,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     shadowColor: 'rgba(0, 0, 0, 0.2)',
     shadowRadius: 10,
+    elevation: 4,
     shadowOpacity: 1,
     shadowOffset: {
       height: 1,
@@ -192,6 +198,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     shadowColor: 'rgba(0, 0, 0, 0.2)',
     shadowRadius: 3,
+    elevation: 4,
     shadowOpacity: 1,
     height: 190,
   },
@@ -228,6 +235,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'space-around',
     margin: 10,
+    elevation: 4,
   },
   card1Buttons: {
     borderRadius: 10,
@@ -247,6 +255,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 10,
     shadowOpacity: 1,
+    elevation: 4,
   },
   adfreebuttonView: {
     backgroundColor: 'transparent',
@@ -262,6 +271,7 @@ const styles = StyleSheet.create({
       height: 2,
     },
     shadowRadius: 2,
+    elevation: 4,
     shadowOpacity: 1,
     padding: 0,
     paddingVertical: 7,
@@ -281,7 +291,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'flex-start',
     position: 'absolute',
-    top: 50,
+    // elevation: 4,
+    top: PAGE_HEIGHT >= 800 ? 50 : 20,
     right: 20,
     zIndex: 3,
   },
@@ -295,6 +306,7 @@ const styles = StyleSheet.create({
       height: 2,
     },
     shadowRadius: 10,
+    elevation: 4,
     shadowOpacity: 1,
     marginTop: 10,
     marginRight: 5,
@@ -306,6 +318,7 @@ const styles = StyleSheet.create({
     width: 25,
     backgroundColor: 'red',
     borderRadius: 25 / 2,
+    elevation: 4,
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',

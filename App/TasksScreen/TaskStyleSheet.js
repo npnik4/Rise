@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
       height: 1,
     },
     shadowRadius: 3,
+    // elevation: 5,
     shadowOpacity: 1,
   },
   group7View: {
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     // borderWidth: 1,
     // borderColor: '#dddddd',
+    elevation: 2,
     alignItems: 'flex-start',
   },
   bathroomText: {
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     marginLeft: 45,
     marginRight: '15%',
-    marginTop: 10,
+    marginTop: 7,
     width: '70%',
   },
   minsText: {
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginLeft: 45,
     marginTop: 5,
-    paddingLeft: 5,
+    paddingLeft: '5%',
   },
   minusButton: {
     backgroundColor: 'transparent',

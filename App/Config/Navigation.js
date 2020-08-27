@@ -52,6 +52,7 @@ const TasksStackScreen = () => (
       headerStyle: {
         backgroundColor: headerColor,
         shadowColor: 'transparent',
+        elevation: 0,
       },
       headerTitleStyle: {
         fontSize: 20,
@@ -62,12 +63,14 @@ const TasksStackScreen = () => (
       headerTintColor: headerTintColor,
       headerBackTitleVisible: false,
       gestureEnabled: false,
+      animationEnabled: Platform.OS === 'ios' ? true : false,
     }}>
     <TasksStack.Screen
       name="Tasks"
       component={TasksScreen}
       options={{
         headerTitle: '',
+        headerShown: false,
       }}
     />
     <TasksStack.Screen
@@ -94,6 +97,7 @@ const HomeStackScreen = () => (
       headerStyle: {
         backgroundColor: headerColor,
         shadowColor: 'transparent',
+        elevation: 0,
       },
       headerTitleStyle: {
         fontSize: 20,
@@ -104,6 +108,7 @@ const HomeStackScreen = () => (
       headerBackTitleVisible: false,
       headerTintColor: headerTintColor,
       gestureEnabled: false,
+      animationEnabled: Platform.OS === 'ios' ? true : false,
     }}>
     <HomeStack.Screen
       name="Home"
@@ -131,6 +136,7 @@ const SettingsStackScreen = () => (
       headerStyle: {
         backgroundColor: headerColor,
         shadowColor: 'transparent',
+        elevation: 0,
       },
       headerTitleStyle: {
         fontSize: 20,
@@ -141,12 +147,14 @@ const SettingsStackScreen = () => (
       headerBackTitleVisible: false,
       headerTintColor: headerTintColor,
       gestureEnabled: false,
+      animationEnabled: Platform.OS === 'ios' ? true : false,
     }}>
     <SettingsStack.Screen
       name="Profile"
       component={Profile}
       options={{
         headerTitle: '',
+        headerShown: false,
       }}
     />
     <SettingsStack.Screen
@@ -209,6 +217,9 @@ const AppTabsScreen = () => (
         elevation: 8,
         shadowColor: 'rgba(0, 0, 0, 0.15)',
         shadowRadius: 5,
+        shadowOffset: {
+          height: 0,
+        },
         shadowOpacity: 1,
         height: '8%',
         backgroundColor: '#fff',
@@ -283,6 +294,7 @@ const AuthStackScreen = () => (
       headerStyle: {
         backgroundColor: 'rgba(176,196,222, 1)',
         shadowColor: 'transparent',
+        elevation: 0,
       },
       headerTitleStyle: {
         fontSize: 20,
@@ -292,6 +304,7 @@ const AuthStackScreen = () => (
       headerBackTitleVisible: false,
       cardOverlayEnabled: false,
       headerTintColor: headerTintColor,
+      animationEnabled: Platform.OS === 'ios' ? true : false,
     }}>
     <AuthStack.Screen
       name="LoginScreen"

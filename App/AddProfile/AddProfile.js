@@ -21,6 +21,7 @@ import {
   Modal,
   Alert,
   ActivityIndicator,
+  Platform,
 } from 'react-native';
 import {NavigationContext} from '@react-navigation/native';
 import {
@@ -46,6 +47,7 @@ class AddProfile extends React.Component {
       riselogoImageScale: new Animated.Value(-1),
       riselogoImageOpacity: new Animated.Value(-1),
       showModel: false,
+      showModelAndriod: false,
       showAddress: false,
       showDateModel: false,
       openSubModeModal: false,
@@ -215,7 +217,9 @@ class AddProfile extends React.Component {
   };
 
   openModal = () => {
-    this.setState({showModel: true});
+    Platform.OS === 'ios'
+      ? this.setState({showModel: true})
+      : this.setState({showModelAndriod: true});
   };
 
   openDateModal = () => {
@@ -312,6 +316,21 @@ class AddProfile extends React.Component {
           </View>
         </View>
       </Modal>
+    );
+  };
+
+  androidModal = () => {
+    return (
+      <DateTimePicker
+        timeZoneOffsetInMinutes={0}
+        value={this.state.time}
+        mode={'time'}
+        is24Hour={true}
+        minuteInterval={5}
+        display="spinner"
+        style={{width: '100%'}}
+        onChange={this.onChangeTime}
+      />
     );
   };
 
@@ -873,6 +892,7 @@ class AddProfile extends React.Component {
   timePicker = (title) => {
     return (
       <View style={styles.timepickerView}>
+        {this.state.showModelAndriod ? this.androidModal() : null}
         <Text style={styles.arrivalTimeText}>{title}</Text>
         <TouchableOpacity onPress={() => this.openModal()}>
           <TextInput
@@ -1235,6 +1255,7 @@ class AddProfile extends React.Component {
               top: 15,
               bottom: this.state.profileType === '' ? 40 : 25,
               alignItems: 'center',
+              elevation: 5,
             }}>
             {this.state.profileType === '' ? this.selectProfileType() : null}
             {this.state.profileType === 'normal' ? this.normal() : null}

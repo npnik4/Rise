@@ -143,7 +143,7 @@ class EditTask extends React.Component {
           <View style={styles.backgroundcardView}>
             <Image
               source={require('./../../assets/images/BackgroundCard.png')}
-              style={{resizeMode: 'contain'}}
+              style={{resizeMode: 'stretch', width: '100%'}}
             />
           </View>
           <View
@@ -163,14 +163,13 @@ class EditTask extends React.Component {
           <View
             pointerEvents="box-none"
             style={{
-              position: 'absolute',
-              left: 43,
-              right: 42,
-              top: 70,
-              height: 143,
+              flex: 1,
+              flexDirection: 'column',
+              alignItems: 'center',
+              marginTop: 60,
             }}>
-            <Text style={styles.taskNameText}>Task Name</Text>
             <View style={styles.tasktextboxView}>
+              <Text style={styles.taskNameText}>Task Name</Text>
               <TextInput
                 multiline={true}
                 returnKeyType="done"
@@ -184,94 +183,101 @@ class EditTask extends React.Component {
                 style={styles.getDressedTextInput}
               />
             </View>
-          </View>
-          <View
-            pointerEvents="box-none"
-            style={{
-              position: 'absolute',
-              left: 71,
-              right: 70,
-              top: 250,
-              bottom: 26,
-              alignItems: 'center',
-            }}>
-            <Text style={styles.approximateTaskLenText}>
-              Approximate Task Length
-            </Text>
-            <View style={styles.counterView}>
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  alignSelf: 'center',
-                  top: 0,
-                  bottom: 0,
-                  justifyContent: 'center',
-                }}>
-                <View style={styles.textFieldView} />
-              </View>
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  right: 0,
-                  top: 0,
-                  bottom: 0,
-                  justifyContent: 'center',
-                }}>
-                <View
-                  pointerEvents="box-none"
-                  style={{
-                    height: 40,
-                    // marginLeft: 13,
-                    // marginRight: 13,
-                    paddingHorizontal: 13,
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                  }}>
-                  <TouchableOpacity
-                    onPress={() => this.onMinusButton()}
-                    style={styles.buttonTwoButton}>
-                    <Text style={styles.buttonTwoButtonText}>-</Text>
-                  </TouchableOpacity>
-                  <View
-                    style={{
-                      flex: 1,
-                    }}
-                  />
-                  <TouchableOpacity
-                    onPress={() => this.onPlusButton()}
-                    style={styles.buttonButton}>
-                    <Text style={styles.buttonButtonText}>+</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <View
-                pointerEvents="box-none"
-                style={{
-                  position: 'absolute',
-                  alignSelf: 'center',
-                  width: 33,
-                  top: 8,
-                  height: 37,
-                  alignItems: 'center',
-                }}>
-                <TextInput
-                  keyboardType="number-pad"
-                  autoCorrect={false}
-                  style={styles.textInputTextInput}
-                  onChangeText={(mins) => this.onChangeMins(mins)}
-                  value={this.state.mins.toString()}
-                />
-                <Text style={styles.minsText}>mins</Text>
-              </View>
-            </View>
             <View
               style={{
                 flex: 1,
-              }}
-            />
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                backgroundColor: 'transparent',
+                alignItems: 'center',
+                marginVertical: 5,
+              }}>
+              <Text style={styles.approximateTaskLenText}>
+                Approximate Task Length
+              </Text>
+              <View style={styles.counterView}>
+              <View
+                  pointerEvents="box-none"
+                  style={{
+                    position: 'absolute',
+                    alignSelf: 'center',
+                    top: 0,
+                    bottom: 0,
+                    justifyContent: 'center',
+                  }}>
+                  <View style={styles.textFieldView} />
+                </View>
+                <View
+                  pointerEvents="box-none"
+                  style={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    justifyContent: 'center',
+                  }}>
+                  <View
+                    pointerEvents="box-none"
+                    style={{
+                      height: 40,
+                      marginLeft: 16,
+                      marginRight: 13,
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                    }}>
+                    <TouchableOpacity
+                      onPress={() => this.onMinusButton()}
+                      style={styles.buttonTwoButton}>
+                      <Text style={styles.buttonTwoButtonText}>-</Text>
+                    </TouchableOpacity>
+                    <View
+                      style={{
+                        flex: 1,
+                      }}
+                    />
+                    <TouchableOpacity
+                      onPress={() => this.onPlusButton()}
+                      style={styles.buttonButton}>
+                      <Text style={styles.buttonButtonText}>+</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <View
+                  pointerEvents="box-none"
+                  style={{
+                    position: 'absolute',
+                    alignSelf: 'center',
+                    width: 33,
+                    top: 8,
+                    height: 37,
+                    alignItems: 'center',
+                    // elevation: 1,
+                  }}>
+                  <TextInput
+                    keyboardType="number-pad"
+                    autoCorrect={false}
+                    style={styles.textInputTextInput}
+                    onChangeText={(mins) => this.onChangeMins(mins)}
+                    value={this.state.mins.toString()}
+                  />
+                  <Text style={styles.minsText}>mins</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View style={{flex: 1}} />
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              backgroundColor: 'transparent',
+              marginBottom: 30,
+              alignItems: 'center',
+              // borderWidth: 2,
+              marginVertical: 5,
+            }}>
             <Animated.View
               style={[
                 {
