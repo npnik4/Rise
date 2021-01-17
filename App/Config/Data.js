@@ -1,4 +1,3 @@
-export const API_KEY = 'AIzaSyCn_PisPnh19CPHRx94mijO_76AxMH1ZdU';
 
 export const articles = [
   {
